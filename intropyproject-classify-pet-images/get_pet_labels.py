@@ -22,7 +22,7 @@ from os import listdir
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
 #       with this function
-# 
+#
 def get_pet_labels(image_dir):
     """
     Creates a dictionary of pet labels (results_dic) based upon the filenames 
@@ -42,4 +42,20 @@ def get_pet_labels(image_dir):
     """
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return None
+    # Imports only listdir function from OS module
+    # Retrieve the filenames from folder pet_images/
+
+    filename_list = listdir(image_dir)
+    results_dic = dict()
+
+    for f_id in range(0, len(filename_list), 1):
+        if filename_list[f_id] not in results_dic:
+            pet_label = ""
+            for word in filename_list[f_id].lower().split("_"):
+                if word.isalpha():
+                    pet_label += word + ' '
+
+            pet_label = pet_label.strip()
+            results_dic[filename_list[f_id]] = [pet_label]
+
+    return results_dic

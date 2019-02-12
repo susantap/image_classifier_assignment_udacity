@@ -39,5 +39,11 @@ def get_input_args():
      parse_args() -data structure that stores the command line arguments object  
     """
     # Replace None with parser.parse_args() parsed argument collection that 
-    # you created with this function 
-    return None
+    # you created with this function
+
+    parser = argparse.ArgumentParser(description='Processing input arguments for image classifier')
+    parser.add_argument('--dir', type=str, default='pet_images/', help='path to folder of images')
+    parser.add_argument('--arch', type=str, default='vgg', help='CNN Model architecture to be used. i.e resnet, alexnet, vgg')
+    parser.add_argument('--dogfile', default='dognames.txt', help='List of Dog names')
+
+    return parser.parse_args()
