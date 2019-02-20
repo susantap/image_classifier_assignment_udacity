@@ -66,5 +66,44 @@ def adjust_results4_isadog(results_dic, dogfile):
                maltese) (string - indicates text file's filename)
     Returns:
            None - results_dic is mutable data type so no return needed.
-    """           
-    None
+    """
+    dognames_dic = dict()
+    with open(dogfile) as dog_file:
+        for line in dog_file:
+            line = line.strip()
+            if line not in dognames_dic:
+                dognames_dic[line] = 1
+            else:
+                print("Warning: the dog name: {} already exists in the dognames_dic".format(line))
+
+    for key, val in results_dic.items():
+        pet_image_label_isdog = 0
+        pet_classifier_label_isdog = 0
+
+        for k in dognames_dic.keys():
+
+            ls = list(map(str.strip, k.split(',')))
+
+            if val[0] in ls:
+                pet_image_label_isdog = 1
+            # this is the tricky part, any match required
+            for cl_item in val[1].split(","):
+                if cl_item.strip() in ls:
+                    pet_classifier_label_isdog = 1
+                    break
+
+            # if val[1] in k.split(","):
+            #    pet_classifier_label_isdog = 1
+            if pet_image_label_isdog == 1 and pet_classifier_label_isdog == 1:
+                break
+
+        val.extend([pet_image_label_isdog, pet_classifier_label_isdog])
+    """
+    for key, val in results_dic.items():
+        print("key: ", key, " pet image label: ", val[0],
+              " classifier label: ", val[1],
+              " match btw pet_label and classifies: ", val[2], " pet image is-a dog:  ", val[3],
+              " Classifier classifies image as-a dog: ", val[4], "\n")
+    """
+
+None
