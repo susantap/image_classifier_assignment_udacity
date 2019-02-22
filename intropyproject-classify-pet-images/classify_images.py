@@ -71,7 +71,7 @@ def classify_images(images_dir, results_dic, model):
 
     for key, val in results_dic.items():
 
-        image_file_path = path.join("pet_images", key)
+        image_file_path = path.join(images_dir, key)
         classified_image = classifier(image_file_path, model).lower().strip()
         matches = 0
 
