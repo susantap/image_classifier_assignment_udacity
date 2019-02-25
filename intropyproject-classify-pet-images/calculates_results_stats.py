@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/calculates_results_stats.py
 #                                                                             
-# PROGRAMMER:
-# DATE CREATED:                                  
-# REVISED DATE: 
+# PROGRAMMER: Susanta pattanayak
+# DATE CREATED:  02/08/2019
+# REVISED DATE: 02/25/2019
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
 #          architecture to classify the images. This function will use the 
@@ -37,11 +37,8 @@
 #            pct_correct_breed - percentage of correctly classified dog breeds
 #            pct_correct_notdogs - percentage of correctly classified NON-dogs
 #
-##
-# TODO 5: Define calculates_results_stats function below, please be certain to replace None
-#       in the return statement with the results_stats_dic dictionary that you create 
-#       with this function
-# 
+
+
 def calculates_results_stats(results_dic):
     """
     Calculates statistics of the results of the program run using classifier's model 
@@ -95,7 +92,8 @@ def calculates_results_stats(results_dic):
     results_stats_dic['n_correct_notdogs'] = 0
     results_stats_dic['n_correct_breed'] = 0
 
-    # iterate through the result_dictionary to get the numbers and teh stats
+    # iterate through the result_dictionary to get the numbers and the stats
+    # TODO: Not a most elegant way to do the if conditions. Need to revisit this section later.
     for key in results_dic:
 
         if results_dic[key][3] == 1:
@@ -113,14 +111,11 @@ def calculates_results_stats(results_dic):
         if results_dic[key][3] == 1 and results_dic[key][2] == 1:
             results_stats_dic['n_correct_breed'] += 1
 
-
-        # calculates number of total images
+    # calculates number of total images
     results_stats_dic['n_images'] = len(results_dic)
 
     results_stats_dic['n_notdogs_img'] = (results_stats_dic['n_images'] -
                                           results_stats_dic['n_dogs_img'])
-
-
 
     # calculate the stats
 

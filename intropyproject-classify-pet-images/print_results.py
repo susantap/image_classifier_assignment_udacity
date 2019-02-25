@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/print_results.py
-#                                                                             
-# PROGRAMMER: 
-# DATE CREATED:
-# REVISED DATE: 
+#
+# PROGRAMMER: Susanta pattanayak
+# DATE CREATED:  02/08/2019
+# REVISED DATE: 02/25/2019
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
 #          should also allow the user to be able to print out cases of misclassified
@@ -25,12 +25,9 @@
 #             False in the function call within main (defaults to False)
 #         This function does not output anything other than printing a summary
 #         of the final results.
-##
-# TODO 6: Define print_results function below, specifically replace the None
-#       below by the function definition of the print_results function. 
-#       Notice that this function doesn't to return anything because it  
-#       prints a summary of the results using results_dic and results_stats_dic
-# 
+#
+
+
 def print_results(results_dic, results_stats_dic, model,
                   print_incorrect_dogs=False, print_incorrect_breed=False):
     """
@@ -91,11 +88,12 @@ def print_results(results_dic, results_stats_dic, model,
                 # Pet Image Label is NOT - a - Dog - Classified as a - DOG
                 print("Pet Image Label is NOT - a - Dog: {} - Classified as a - DOG: {}".format(results_dic[key][3],
                                                                                                 results_dic[key][4]))
-    # IF print_incorrect_breed == True AND there were dogs whose breeds
-    # were incorrectly classified - print out these cases
+    # IF print_incorrect_breed == True AND there were dogs whose breeds were incorrectly
+    # classified - print out these cases
+
     if (print_incorrect_breed and
-            (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed'])
-    ):
+            (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed'])):
+
         print("\nINCORRECT Dog Breed Assignment:")
 
         # process through results dict, printing incorrectly classified breeds

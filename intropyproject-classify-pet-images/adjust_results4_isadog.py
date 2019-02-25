@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/adjust_results4_isadog.py
-#                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                 
-# REVISED DATE: 
+#
+# PROGRAMMER: Susanta pattanayak
+# DATE CREATED:  02/08/2019
+# REVISED DATE: 02/25/2019
 # PURPOSE: Create a function adjust_results4_isadog that adjusts the results 
 #          dictionary to indicate whether or not the pet image label is of-a-dog, 
 #          and to indicate whether or not the classifier image label is of-a-dog.
@@ -36,7 +36,9 @@
 #       Notice that this function doesn't return anything because the 
 #       results_dic dictionary that is passed into the function is a mutable 
 #       data type so no return is needed.
-# 
+#
+
+
 def adjust_results4_isadog(results_dic, dogfile):
     """
     Adjusts the results dictionary to determine if classifier correctly 
@@ -49,7 +51,7 @@ def adjust_results4_isadog(results_dic, dogfile):
                   index 0 = pet image label (string)
                   index 1 = classifier label (string)
                   index 2 = 1/0 (int)  where 1 = match between pet image
-                    and classifer labels and 0 = no match between labels
+                    and classifier labels and 0 = no match between labels
                 ------ where index 3 & index 4 are added by this function -----
                  NEW - index 3 = 1/0 (int)  where 1 = pet image 'is-a' dog and 
                             0 = pet Image 'is-NOT-a' dog. 
@@ -98,6 +100,9 @@ def adjust_results4_isadog(results_dic, dogfile):
                 break
 
         val.extend([pet_image_label_isdog, pet_classifier_label_isdog])
+
+    # Commented test function to iterate through the results_dic to print out pet and classified labels
+
     """
     for key, val in results_dic.items():
         print("key: ", key, " pet image label: ", val[0],
@@ -105,5 +110,6 @@ def adjust_results4_isadog(results_dic, dogfile):
               " match btw pet_label and classifies: ", val[2], " pet image is-a dog:  ", val[3],
               " Classifier classifies image as-a dog: ", val[4], "\n")
     """
+
 
 None

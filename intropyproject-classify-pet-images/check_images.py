@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/check_images.py
 #
-# TODO 0: Add your information below for Programmer & Date Created.                                                                             
 # PROGRAMMER: Susanta pattanayak
 # DATE CREATED:  02/08/2019
-# REVISED DATE: 02/08/2019
+# REVISED DATE: 02/25/2019
 # PURPOSE: Classifies pet images using a pretrained CNN model, compares these
 #          classifications to the true identity of the pets in the images, and
 #          summarizes how well the CNN performed on the image classification task. 
@@ -76,7 +75,7 @@ def main():
     classify_images(in_arg.dir, results, in_arg.arch)
 
     # Function that checks Results Dictionary using results    
-    ### check_classifying_images(results)
+    check_classifying_images(results)
 
     # TODO 4: Define adjust_results4_isadog function within the file adjust_results4_isadog.py
     # Once the adjust_results4_isadog function has been defined replace 'None' 

@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/get_pet_labels.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                  
-# REVISED DATE: 
+#
+# PROGRAMMER: Susanta pattanayak
+# DATE CREATED:  02/08/2019
+# REVISED DATE: 02/25/2019
 # PURPOSE: Create the function get_pet_labels that creates the pet labels from 
 #          the image's filename. This function inputs: 
 #           - The Image Folder as image_dir within get_pet_labels function and 
@@ -46,12 +47,19 @@ def get_pet_labels(image_dir):
     # Imports only listdir function from OS module
     # Retrieve the filenames from folder pet_images/
 
+    # Get the filename from the image directory
     filename_list = listdir(image_dir)
     results_dic = dict()
 
+    # Iterate through the filename to generate the pet label
     for f_id in range(0, len(filename_list), 1):
         if filename_list[f_id] not in results_dic:
             pet_label = ""
+
+            #  format the pet labels so that they are in all lower case letters
+            #     and with leading and trailing whitespace characters stripped from them.
+            #     (ex. filename = 'Boston_terrier_02259.jpg' Pet label = 'boston terrier')
+
             for word in filename_list[f_id].lower().split("_"):
                 if word.isalpha():
                     pet_label += word + ' '

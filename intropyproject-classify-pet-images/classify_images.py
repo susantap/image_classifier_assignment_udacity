@@ -69,9 +69,12 @@ def classify_images(images_dir, results_dic, model):
            None - results_dic is mutable data type so no return needed.
     """
 
+    # iterate through the dictionary to fetch the image file
     for key, val in results_dic.items():
 
         image_file_path = path.join(images_dir, key)
+
+        # Get the classified image through the classifier function
         classified_image = classifier(image_file_path, model).lower().strip()
         matches = 0
 
