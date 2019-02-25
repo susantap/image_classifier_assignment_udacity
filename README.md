@@ -11,6 +11,6 @@ This repository contains _REVISED_ code and associated files for the AI Programm
 
 ## Dependencies
 
-The conda environment for this project: [environment_image_classifier_assignment.yml]
+The conda environment for this project: [environment_image_classifier_assignment.yml](https://github.com/susantap/image_classifier_assignment_udacity/blob/master/environment_image_classifier_assignment.yml)
 
 
