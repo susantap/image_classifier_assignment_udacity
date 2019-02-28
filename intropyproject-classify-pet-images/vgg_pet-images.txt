@@ -6,17 +6,20 @@ Command Line Arguments:
 Pet Image Label Dictionary has 40 key-value pairs.
 Below are 10 of them:
  1 key:                     cat_01.jpg  label:                        cat
- 2 key:               Poodle_07927.jpg  label:                     poodle
- 3 key:                     cat_02.jpg  label:                        cat
- 4 key:           Great_dane_05320.jpg  label:                 great dane
- 5 key:            Dalmatian_04068.jpg  label:                  dalmatian
- 6 key:                   gecko_02.jpg  label:                      gecko
- 7 key:                     cat_07.jpg  label:                        cat
- 8 key:       Great_pyrenees_05435.jpg  label:             great pyrenees
- 9 key:  German_shepherd_dog_04931.jpg  label:        german shepherd dog
-10 key:  German_shepherd_dog_04890.jpg  label:        german shepherd dog
+ 2 key:                     Poodle.jpg  label:                     poodle
+ 3 key:               Poodle_07927.jpg  label:                     poodle
+ 4 key:                     cat_02.jpg  label:                        cat
+ 5 key:           Great_dane_05320.jpg  label:                 great dane
+ 6 key:            Dalmatian_04068.jpg  label:                  dalmatian
+ 7 key:                   gecko_02.jpg  label:                      gecko
+ 8 key:                     cat_07.jpg  label:                        cat
+ 9 key:       Great_pyrenees_05435.jpg  label:             great pyrenees
+10 key:  German_shepherd_dog_04931.jpg  label:        german shepherd dog
 
      MATCH:
+
+                    Poodle.jpg: 
+Real:                     poodle   Classifier:        standard poodle, poodle
 
               Poodle_07927.jpg: 
 Real:                     poodle   Classifier:        standard poodle, poodle
@@ -59,9 +62,6 @@ Real:                     rabbit   Classifier: wood rabbit, cottontail, cottonta
 
              polar_bear_04.jpg: 
 Real:                 polar bear   Classifier: ice bear, polar bear, ursus maritimus, thalarctos maritimus
-
-              Poodle_07956.jpg: 
-Real:                     poodle   Classifier:        standard poodle, poodle
 
            fox_squirrel_01.jpg: 
 Real:               fox squirrel   Classifier: fox squirrel, eastern fox squirrel, sciurus niger
@@ -144,6 +144,10 @@ Real:             great pyrenees   Classifier:                         kuvasz
 
      MATCH:
 
+                    Poodle.jpg: 
+Real:                     poodle   Classifier:        standard poodle, poodle  
+PetLabelDog: 1  ClassLabelDog: 1
+
               Poodle_07927.jpg: 
 Real:                     poodle   Classifier:        standard poodle, poodle  
 PetLabelDog: 1  ClassLabelDog: 1
@@ -199,10 +203,6 @@ PetLabelDog: 0  ClassLabelDog: 0
              polar_bear_04.jpg: 
 Real:                 polar bear   Classifier: ice bear, polar bear, ursus maritimus, thalarctos maritimus  
 PetLabelDog: 0  ClassLabelDog: 0
-
-              Poodle_07956.jpg: 
-Real:                     poodle   Classifier:        standard poodle, poodle  
-PetLabelDog: 1  ClassLabelDog: 1
 
            fox_squirrel_01.jpg: 
 Real:               fox squirrel   Classifier: fox squirrel, eastern fox squirrel, sciurus niger  
@@ -333,4 +333,4 @@ INCORRECT Dog Breed Assignment:
 Real:                     beagle   Classifier:  walker hound, walker foxhound
 Real:             great pyrenees   Classifier:                         kuvasz
 
-** Total Elapsed Runtime: 0:0:18
+** Total Elapsed Runtime: 0:0:19

@@ -3,10 +3,19 @@ Command Line Arguments:
     arch = resnet 
  dogfile = dognames.txt
 
+
+ERROR: File .DS_Store is not a valid file name as it starts with  '.'
+cannot identify image file 'uploaded_images/Frog_corrupted.jpeg'
+Exception: cannot identify image file 'uploaded_images/Frog_corrupted.jpeg' ERROR: File Frog_corrupted.jpeg is not a valid image 
+
+cannot identify image file 'uploaded_images/Random.txt'
+Exception: cannot identify image file 'uploaded_images/Random.txt' ERROR: File Random.txt is not a valid image 
+
+
 Pet Image Label Dictionary has 4 key-value pairs.
 Below are 4 of them:
- 1 key:                      Frog.jpeg  label:                           
- 2 key:                  Suitcase.jpeg  label:                           
+ 1 key:                      Frog.jpeg  label:                       frog
+ 2 key:                  Suitcase.jpeg  label:                   suitcase
  3 key:         German_shepherd_01.jpg  label:            german shepherd
  4 key:         German_shepherd_02.jpg  label:            german shepherd
 
@@ -18,10 +27,10 @@ Real:            german shepherd   Classifier: german shepherd, german shepherd 
  NOT A MATCH:
 
                      Frog.jpeg: 
-Real:                              Classifier:           tree frog, tree-frog
+Real:                       frog   Classifier:           tree frog, tree-frog
 
                  Suitcase.jpeg: 
-Real:                              Classifier:                   space heater
+Real:                   suitcase   Classifier:                   space heater
 
         German_shepherd_02.jpg: 
 Real:            german shepherd   Classifier:                       sea lion
@@ -37,11 +46,11 @@ PetLabelDog: 1  ClassLabelDog: 1
  NOT A MATCH:
 
                      Frog.jpeg: 
-Real:                              Classifier:           tree frog, tree-frog  
+Real:                       frog   Classifier:           tree frog, tree-frog  
 PetLabelDog: 0  ClassLabelDog: 0
 
                  Suitcase.jpeg: 
-Real:                              Classifier:                   space heater  
+Real:                   suitcase   Classifier:                   space heater  
 PetLabelDog: 0  ClassLabelDog: 0
 
         German_shepherd_02.jpg: 
